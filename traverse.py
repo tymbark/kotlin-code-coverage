@@ -1,7 +1,7 @@
 import sys, os
 
-root = sys.argv[1] + "app/src/main/java"
-test_root = sys.argv[1] + "app/src/test/java"
+root = sys.argv[1] + "/app/src/main/java"
+test_root = sys.argv[1] + "/app/src/test/java"
 all_methods = {}
 tested_methods = {}
 
@@ -26,6 +26,7 @@ def find_methods(x, dir_name, files):
 						and "internal" not in line
 						and "override" not in line):
 						method_name = line.split()[1].replace("()", "").replace(":", "")
+						# print("public val detected in " + file_name + " --> " + method_name)
 						public_methods.append(method_name)
 						
 					if ("fun" in line 
@@ -34,6 +35,7 @@ def find_methods(x, dir_name, files):
 						and "internal" not in line 
 						and "override" not in line):
 						method_name = line.split()[1].replace(":", "")
+						# print("public fun detected in " + file_name + " --> " + method_name)
 						public_methods.append(method_name)
 
 				constructor_ended = "{" in line
@@ -46,9 +48,11 @@ def find_methods(x, dir_name, files):
 
 def find_usages(x, dir_name, files):
 	for file_name in files:
+		# print(file_name)
 
 		for key in all_methods:
 			if (key.split(".")[0] in file_name):
+				# print(" found test class for " + key + " -> " + file_name)
 
 				file_name_with_path = dir_name + "/" + file_name
 				file = open(file_name_with_path)
@@ -61,6 +65,7 @@ def find_usages(x, dir_name, files):
 					for method in methods_for_file:
 						if (method in line):
 							if (method not in tested_methods[key]):
+								# print(file_name + ": " + method + " is tested: " + line.replace("  ", "").replace("\n", ""))
 								tested_methods[key].append(method)
 
 os.path.walk(root, find_methods, 0)
@@ -79,9 +84,7 @@ coverage = float(tested_methods_count) / float(all_methods_count)
 
 for file_name in all_methods:
 	cov = (float(len(tested_methods[file_name])) / float(len(all_methods[file_name])))
-	print(str(len(tested_methods[file_name])) + "/" + str(len(all_methods[file_name])) + 
-		" (" + str((round(cov, 2)) * 100 ) + "%) " + file_name)
-	
+	print(str(len(tested_methods[file_name])) + "/" + str(len(all_methods[file_name])) + " (" + str((round(cov, 2)) * 100 ) + "%) " + file_name)
 	for method in all_methods[file_name]:
 		if method in tested_methods[file_name]:
 			print (" * " + method)

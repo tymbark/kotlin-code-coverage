@@ -1,0 +1,129 @@
+
+ChatPresenterSuggestionTest.kt: messages is tested: private val messagesSubject: BehaviorSubject<List<ServerMessage>> = BehaviorSubject.create()
+ChatPresenterSuggestionTest.kt: selectedSuggestionsObservable is tested: presenter.selectedSuggestionsObservable.subscribe(testSubscriber)
+ChatPresenterSuggestionTest.kt: sendMessageSuccess is tested: presenter.sendMessageSuccess.subscribe()
+ChatPresenterSuggestionTest.kt: notSelectedSuggestionsObservable is tested: presenter.notSelectedSuggestionsObservable.subscribe(testSubscriber)
+ChatPresenterSuggestionTest.kt: clearMessagesInput is tested: presenter.clearMessagesInput.onNext(Any())
+
+
+ProfilePresenterStep0Test.kt: profileUpdateError() is tested: presenter.profileUpdateError().subscribe(subscriber)
+
+ProfilePresenterStep1Test.kt: errorFirstNameEmpty() is tested: presenter.errorFirstNameEmpty().subscribe(testSubscriber)
+ProfilePresenterStep1Test.kt: errorLastNameEmpty() is tested: presenter.errorLastNameEmpty().subscribe(testSubscriber)
+ProfilePresenterStep1Test.kt: subscribe() is tested: presenter.subscribe()
+ProfilePresenterStep1Test.kt: profileUpdateError() is tested: presenter.profileUpdateError().subscribe(subscriber)
+
+ProfilePresenterStep2Test.kt: errorDobEmpty() is tested: presenter.errorDobEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep2Test.kt: errorPassportNumberEmpty() is tested: presenter.errorPassportNumberEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep2Test.kt: errorPassportIssuedEmpty() is tested: presenter.errorPassportIssuedEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep2Test.kt: errorNationalityEmpty() is tested: presenter.errorNationalityEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep2Test.kt: errorIssuingCountryEmpty() is tested: presenter.errorIssuingCountryEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep2Test.kt: errorPassportExpiryEmpty() is tested: presenter.errorPassportExpiryEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep2Test.kt: subscribe() is tested: presenter.subscribe()
+ProfilePresenterStep2Test.kt: profileUpdateError() is tested: presenter.profileUpdateError().subscribe(subscriber)
+
+ProfilePresenterStep3Test.kt: errorEmailEmpty() is tested: presenter.errorEmailEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep3Test.kt: errorPhoneEmpty() is tested: presenter.errorPhoneEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep3Test.kt: errorPrefixEmpty() is tested: presenter.errorPrefixEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep3Test.kt: subscribe() is tested: presenter.subscribe()
+ProfilePresenterStep3Test.kt: profileUpdateError() is tested: presenter.profileUpdateError().subscribe(subscriber)
+
+ProfilePresenterStep4Test.kt: errorCardNumberEmpty() is tested: presenter.errorCardNumberEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep4Test.kt: errorCVVEmpty() is tested: presenter.errorCVVEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep4Test.kt: errorCardHolderEmpty() is tested: presenter.errorCardHolderEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep4Test.kt: errorCardExpiryEmpty() is tested: presenter.errorCardExpiryEmpty().subscribe(errorSubscriber)
+ProfilePresenterStep4Test.kt: cardExpirySubject is tested: presenter.cardExpirySubject.onNext(0L)
+ProfilePresenterStep4Test.kt: subscribe() is tested: presenter.subscribe()
+ProfilePresenterStep4Test.kt: profileUpdateError() is tested: presenter.profileUpdateError().subscribe(subscriber)
+ProfilePresenterStep0.kt
+all methods:
+['showProfileSetup()', 'profileUpdateError()']
+tested methods:
+['profileUpdateError()']
+ChatPresenterAdapterItems.kt
+all methods:
+['suggestionEnabledObservable()']
+tested methods:
+[]
+BookingConfirmationPresenter.kt
+all methods:
+['adapterItems']
+tested methods:
+[]
+NewTravellerPresenter.kt
+all methods:
+['basicInformationData', 'contactInformationData', 'documentInformationData', 'completeTravellerInfo', 'selectIssuingCountryObservable', 'selectNationalityObservable', 'selectPrefixObservable', 'errorFirstNameEmpty()', 'errorLastNameEmpty()', 'errorEmailEmpty()', 'errorPhoneEmpty()', 'errorPrefixEmpty()', 'errorDobEmpty()', 'errorDobWrongDate()', 'errorPassportNumberEmpty()', 'errorPassportIssuedEmpty()', 'errorPassportIssuedWrongDate()', 'errorNationalityEmpty()', 'errorIssuingCountryEmpty()', 'errorPassportExpiryEmpty()', 'errorPassportExpiryWrongDate()', 'saveTraveller']
+tested methods:
+[]
+ChatPresenter.kt
+all methods:
+['getDefaultConciergeName()', 'clearMessagesInput', 'bookingConfirmationClickSubject', 'travellerClickSubject', 'addNewTravellerClickSubject', 'travellerSelectedSubject', 'hotelPropositionClickedSubject', 'hotelBookingClickedSubject', 'flightDetailsObservable', 'conciergeNameChanged', 'messages', 'clickWithImagesObservable', 'selectedSuggestionsObservable', 'notSelectedSuggestionsObservable', 'sendMessageSuccess', 'sendMessageError']
+tested methods:
+['messages', 'selectedSuggestionsObservable', 'sendMessageSuccess', 'notSelectedSuggestionsObservable', 'clearMessagesInput']
+MainActivityPresenter.kt
+all methods:
+['showProfileSetup()', 'profileSetupError()', 'showChat()', 'progressVisibility()']
+tested methods:
+[]
+CountryPresenter.kt
+all methods:
+['countryClickedSubject', 'searchSubject', 'errorLoadingCountriesObservable', 'itemsObservable', 'progressObservable', 'selectedCountryPositionObservable', 'emptySearchObservable']
+tested methods:
+[]
+HotelDetailsPresenter.kt
+all methods:
+['imageClickSubject', 'adapterItems', 'hotelObservable', 'roomObservable', 'photosObservable']
+tested methods:
+[]
+FlightBookingDetailsPresenter.kt
+all methods:
+['imageClickSubject', 'adapterItems', 'oneWayFlightObservable', 'twoWayFlightObservable', 'firstOutboundFlightObservable', 'lastOutboundFlightObservable', 'layoversObservable']
+tested methods:
+[]
+SharedGalleryPresenter.kt
+all methods:
+['clickSubject', 'visibilityObservable']
+tested methods:
+[]
+ProfilePresenterStep5.kt
+all methods:
+[]
+tested methods:
+[]
+ProfilePresenterSelectDocuments.kt
+all methods:
+['passportSelectedObservable', 'nationalIDSelectedObservable', 'iqamaSelectedObservable', 'noDocumentSelectedObservable', 'nextStepObservable']
+tested methods:
+[]
+ProfilePresenterStep1.kt
+all methods:
+['profileUpdateError()', 'errorFirstNameEmpty()', 'errorLastNameEmpty()', 'openStep2Observable()', 'subscribe()']
+tested methods:
+['errorFirstNameEmpty()', 'errorLastNameEmpty()', 'subscribe()', 'profileUpdateError()']
+HotelBookingPresenter.kt
+all methods:
+['adapterItemsObservable']
+tested methods:
+[]
+ProfilePresenterStep4.kt
+all methods:
+['cardExpirySubject', 'data', 'profileUpdateError()', 'errorCardNumberEmpty()', 'errorCardExpiryEmpty()', 'errorCVVEmpty()', 'errorCardHolderEmpty()', 'openStep5Observable()', 'nameObservable()', 'subscribe()']
+tested methods:
+['errorCardNumberEmpty()', 'errorCVVEmpty()', 'errorCardHolderEmpty()', 'errorCardExpiryEmpty()', 'cardExpirySubject', 'subscribe()', 'profileUpdateError()']
+ProfilePresenterStep3.kt
+all methods:
+['data', 'profileUpdateError()', 'selectPrefixObservable', 'errorEmailEmpty()', 'errorPhoneEmpty()', 'errorPrefixEmpty()', 'openStep4Observable()', 'subscribe()']
+tested methods:
+['errorEmailEmpty()', 'errorPhoneEmpty()', 'errorPrefixEmpty()', 'subscribe()', 'profileUpdateError()']
+ProfilePresenterStep2.kt
+all methods:
+['profileUpdateError()', 'selectIssuingCountryObservable', 'selectNationalityObservable', 'errorDobEmpty()', 'errorDobWrongDate()', 'errorPassportNumberEmpty()', 'errorPassportIssuedEmpty()', 'errorPassportIssuedWrongDate()', 'errorNationalityEmpty()', 'errorIssuingCountryEmpty()', 'errorPassportExpiryEmpty()', 'errorPassportExpiryWrongDate()', 'nameObservable()', 'openStep3Observable()', 'subscribe()', 'passportLayoutVisibilityObservable()', 'iqamaLayoutVisibilityObservable()', 'nationalIdLayoutVisibilityObservable()', 'setCheckedPassportObservable()', 'setCheckedIqamaObservable()', 'setCheckedNationalIdObservable()', 'passportEnabledObservable()', 'iqamaLayoutEnabledObservable()', 'nationalIdEnabledObservable()', 'passportBothObservable()', 'passportLeftObservable()', 'iqamaLeftObservable()', 'iqamaRightObservable()', 'iqamaBothObservable()', 'nationalIdBothObservable()', 'nationalIdRightObservable()']
+tested methods:
+['errorDobEmpty()', 'errorPassportNumberEmpty()', 'errorPassportIssuedEmpty()', 'errorNationalityEmpty()', 'errorIssuingCountryEmpty()', 'errorPassportExpiryEmpty()', 'subscribe()', 'profileUpdateError()']
+Code Coverage report: 
+===========================
+|| all methods    127
+|| tested methods 30
+===========================
+|| total coverage 23.62%
+===========================
