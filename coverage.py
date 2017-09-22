@@ -13,32 +13,24 @@ def find_methods(x, dir_name, files):
 
 			public_methods	= []
 
-			start_count = False
-
-			for line in file.readlines():
-
-				if (start_count):
+			for line in file.readlines():	
 					
-					if ("val" in line 
-						and "=" in line
-						and ("Observable" in line or "Subject" in line)
-						and "private" not in line
-						and "internal" not in line
-						and "override" not in line):
-						method_name = line.split()[1].replace("()", "").replace(":", "")
-						public_methods.append(method_name)
-						
-					if ("fun" in line 
-						and "()" in line 
-						and "private" not in line 
-						and "internal" not in line 
-						and "override" not in line):
-						method_name = line.split()[1].replace(":", "")
-						public_methods.append(method_name)
-
-				constructor_ended = "{" in line
-
-				start_count = start_count or constructor_ended
+				if ("val" in line 
+					and "=" in line
+					and ("Observable" in line or "Subject" in line)
+					and "private" not in line
+					and "internal" not in line
+					and "override" not in line):
+					method_name = line.split()[1].replace("()", "").replace(":", "")
+					public_methods.append(method_name)
+					
+				if ("fun" in line 
+					and "()" in line 
+					and "private" not in line 
+					and "internal" not in line 
+					and "override" not in line):
+					method_name = line.split()[1].replace(":", "")
+					public_methods.append(method_name)
 
 			if (len(public_methods) > 0):
 				all_methods[file_name] = public_methods
@@ -81,7 +73,7 @@ for file_name in all_methods:
 	cov = (float(len(tested_methods[file_name])) / float(len(all_methods[file_name])))
 	print(str(len(tested_methods[file_name])) + "/" + str(len(all_methods[file_name])) + 
 		" (" + str((round(cov, 2)) * 100 ) + "%) " + file_name)
-	
+
 	for method in all_methods[file_name]:
 		if method in tested_methods[file_name]:
 			print (" * " + method)
