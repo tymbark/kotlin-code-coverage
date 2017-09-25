@@ -72,7 +72,7 @@ coverage = float(tested_methods_count) / float(all_methods_count)
 for file_name in all_methods:
 	cov = (float(len(tested_methods[file_name])) / float(len(all_methods[file_name])))
 	print(str(len(tested_methods[file_name])) + "/" + str(len(all_methods[file_name])) + 
-		" (" + str((round(cov, 2)) * 100 ) + "%) " + file_name)
+		" (" + str((round(cov, 3)) * 100 ) + "%) " + file_name)
 
 	for method in all_methods[file_name]:
 		if method in tested_methods[file_name]:
